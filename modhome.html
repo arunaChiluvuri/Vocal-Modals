@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimodal System</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        /* Import Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
+        /* Background Animation */
+        body {
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            overflow: hidden;
+        }
+
+        /* Floating Particles for Animation */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://source.unsplash.com/1600x900/?technology,artificial-intelligence') no-repeat center center/cover;
+            opacity: 0.2;
+            animation: moveBackground 20s infinite linear;
+        }
+
+        @keyframes moveBackground {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Header */
+        header {
+            font-size: 32px;
+            font-weight: 600;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            width: 80%;
+            margin: 20px auto;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Container */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 70vh;
+        }
+
+        /* Button Row */
+        .row {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        /* Button Styling */
+        .btn {
+            width: 250px;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 5px 15px rgba(255, 99, 71, 0.5);
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+            animation: float 3s infinite ease-in-out;
+        }
+
+        /* Neon Glow on Hover */
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 15px rgba(255, 99, 71, 0.8);
+        }
+
+        /* Unified Floating Effect for All Buttons */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Icons */
+        .btn i {
+            font-size: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Vocal Bridge
+    </header>
+    <div class="container">
+        <div class="row">
+            <button class="btn" onclick="location.href='modttos.html'">
+                <i class="fas fa-volume-up"></i> Text to Speech
+            </button>
+            <button class="btn" onclick="location.href='modstotwithlang.html'">
+                <i class="fas fa-microphone"></i> Speech to Text
+            </button>
+        </div>
+        <button class="btn" onclick="location.href='/run_gesture'">
+            <i class="fas fa-sign-language"></i> Sign Language Recognition
+        </button>
+    </div>
+</body>
+</html>

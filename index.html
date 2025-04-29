@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Gesture Recognition</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        #video {
+            border: 2px solid black;
+            width: 50%;
+        }
+        #gesture {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hand Gesture Recognition</h1>
+    <img id="video" src="{{ url_for('video_feed') }}" />
+    <p id="gesture">Recognized Gesture: None</p>
+
+    <script>
+        function fetchGesture() {
+            fetch('/get_gesture')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("gesture").innerText = "Recognized Gesture: " + data.gesture;
+                });
+        }
+
+        setInterval(fetchGesture, 1000);  // Fetch gesture every second
+    </script>
+</body>
+</html>
