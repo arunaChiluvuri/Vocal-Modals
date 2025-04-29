@@ -1,4 +1,4 @@
-# Vocal-Modals
+# Vocal-Bridge
 A smart, affordable solution designed to bridge the communication gap between deaf and hearing individuals using speech, text, and sign language recognition—even in offline and noisy environments.
 # 🎯 Project Goals Reached
 * Enabled real-time speech-to-text conversion for spoken communication.
